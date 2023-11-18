@@ -19,7 +19,7 @@ import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 
 const OnlineOrder = () => {
     return (
-        <section className='my-[140px]'>
+        <section className='my-[130px]'>
             <SectionTitle
                 subHeading={'---From 11:00am to 10:00pm---'}
                 heading={'order online'}

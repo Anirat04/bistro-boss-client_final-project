@@ -1,0 +1,6 @@
+.Featured_bg{
+    background: url('../../../../../assets/home/featured.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

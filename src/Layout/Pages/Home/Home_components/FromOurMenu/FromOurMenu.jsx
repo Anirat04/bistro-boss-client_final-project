@@ -11,7 +11,7 @@ const FromOurMenu = () => {
     }, [])
     // console.log(menuData)
     return (
-        <section className="mb-[180px]">
+        <section className="mb-[130px]">
             <SectionTitle
                 subHeading={'---Check it out---'}
                 heading={'from our menu'}
