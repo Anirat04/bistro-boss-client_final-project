@@ -1,6 +1,6 @@
 const MenuComponent = ({item}) => {
     const {name, image, price, recipe } = item;
-    console.log(item)
+    // console.log(item)
     return (
         <div className="flex gap-8">
             <div className="menuImg max-w-[118px] min-h-[104px]">
