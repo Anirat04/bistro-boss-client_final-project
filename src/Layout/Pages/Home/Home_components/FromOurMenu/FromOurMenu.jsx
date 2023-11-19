@@ -20,7 +20,7 @@ const FromOurMenu = () => {
                 {
                     menuData.map(data => (
                         <MenuComponent
-                            key={data.id}
+                            key={data._id}
                             item={data}
                         ></MenuComponent>
                     ))
