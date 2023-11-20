@@ -1,0 +1,6 @@
+.react-tabs__tab--selected{
+    color: #BB8506 !important;
+    border: none !important;
+    text-decoration: underline 3px;
+    text-underline-offset: 8px !important;
+}

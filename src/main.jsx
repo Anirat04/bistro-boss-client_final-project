@@ -9,6 +9,7 @@ import {
 import Layout from './Layout/Layout.jsx';
 import Home from './Layout/Pages/Home/Home.jsx';
 import OurMenu from './Layout/Pages/OurMenu/OurMenu.jsx';
+import OurShop from './Layout/Pages/OurShop/OurShop.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/our-menu",
         element: <OurMenu></OurMenu>
+      },
+      {
+        path: "/our-shop/:category",
+        element: <OurShop></OurShop>
       }
     ]
   },

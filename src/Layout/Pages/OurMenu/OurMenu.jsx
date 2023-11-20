@@ -5,6 +5,9 @@ import MenuItemsCover from "./OurMenuComponents/MenuItemsCover/MenuItemsCover";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 import MenuComponent from "../Shared/MenuComponent/MenuComponent";
 
+// import menu banner cover image
+import MenuBanner_cover_bg from "../../../assets/menu/banner3.jpg"
+
 // import menu banner images to use as parameters
 // dessert bg
 import dessert_bg from '../../../assets/menu/dessert-bg.jpeg'
@@ -14,6 +17,7 @@ import Pizza_bg from '../../../assets/menu/pizza-bg.jpg'
 import Salads_bg from '../../../assets/menu/salad-bg.jpg'
 // soup bg
 import Soup_bg from '../../../assets/menu/soup-bg.jpg'
+import { Link } from "react-router-dom";
 
 const OurMenu = () => {
     const [allMenuData, setAllMenuData] = useState([])
@@ -38,7 +42,7 @@ const OurMenu = () => {
     // console.log(getSoupItems)
     return (
         <div className="OurMenu_bg">
-            <BannerCover></BannerCover>
+            <BannerCover cover_bg={MenuBanner_cover_bg}></BannerCover>
             <div className="Menu-sections bg-white max-w-[1320px] mx-auto">
                 {/* ============================= Our Menu Offered Menu items section starts ============================= */}
                 <div className="pt-[80px] pb-[50px]">
@@ -57,7 +61,9 @@ const OurMenu = () => {
                         }
                     </div>
                     <div className="flex justify-center mt-[45px]">
-                        <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                        <Link to="/our-shop">
+                            <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                        </Link>
                     </div>
                 </div>
                 {/* ============================= Our Menu Offered Menu items section ends ============================= */}
@@ -79,7 +85,9 @@ const OurMenu = () => {
                             }
                         </div>
                         <div className="flex justify-center mt-[45px]">
-                            <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            <Link to="/our-shop/dessert">
+                                <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -103,7 +111,9 @@ const OurMenu = () => {
                             }
                         </div>
                         <div className="flex justify-center mt-[45px]">
-                            <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            <Link to="/our-shop/pizza">
+                                <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -126,7 +136,9 @@ const OurMenu = () => {
                             }
                         </div>
                         <div className="flex justify-center mt-[45px]">
-                            <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            <Link to="/our-shop/salad">
+                                <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -149,7 +161,9 @@ const OurMenu = () => {
                             }
                         </div>
                         <div className="flex justify-center mt-[45px]">
-                            <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            <Link to="/our-shop/soup">
+                                <button className="btn h-full bg-transparent border-t-0 border-x-0 border-b-[3px] border-[#1F2937] text-[#1F2937] text-[20px] uppercase py-[20px] px-[30px] hover:border-[#BB8506] hover:bg-[#1F2937] hover:text-[#BB8506]">ORDER YOUR FAVOURITE FOOD</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
