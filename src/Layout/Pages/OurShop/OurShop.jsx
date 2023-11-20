@@ -9,14 +9,14 @@ import { useParams } from "react-router-dom";
 
 const OurShop = () => {
     const catagories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
-    const {category} = useParams()
+    const { category } = useParams()
     const initialIndex = catagories.indexOf(category)
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [menuCardData, setMenuCardData] = useState([])
     console.log(category)
     console.log(initialIndex)
     useEffect(() => {
-        fetch('/menu.json')
+        fetch('http://localhost:5000/menu')
             .then(res => res.json())
             .then(data => setMenuCardData(data))
     }, [])

@@ -1,3 +1,28 @@
 .OurMenu_bg{
     background: url('../../../assets/menu/menu-bg.png');
 }
+
+.Menu-sections_before::before{
+    content: '';
+    width: 100%;
+    height: 15px;
+    left: 0;
+    top: -8px;
+    background: url('../../../assets/others/download.png');
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    position: absolute;
+    z-index: 99999;
+}
+.Menu-sections_before::after{
+    content: '';
+    width: 100%;
+    height: 12px;
+    left: 0;
+    bottom: -6px;
+    background: url('../../../assets/others/download.png');
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    position: absolute;
+    z-index: 99999;
+}

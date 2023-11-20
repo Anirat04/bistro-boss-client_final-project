@@ -23,7 +23,7 @@ const OurMenu = () => {
     const [allMenuData, setAllMenuData] = useState([])
 
     useEffect(() => {
-        fetch('menu.json')
+        fetch('http://localhost:5000/menu')
             .then(res => res.json())
             .then(data => setAllMenuData(data))
     }, [])
@@ -43,7 +43,8 @@ const OurMenu = () => {
     return (
         <div className="OurMenu_bg">
             <BannerCover cover_bg={MenuBanner_cover_bg}></BannerCover>
-            <div className="Menu-sections bg-white max-w-[1320px] mx-auto">
+            <div className="Menu-sections bg-white max-w-[1320px] mx-auto relative">
+                <div className="Menu-sections_before"></div>
                 {/* ============================= Our Menu Offered Menu items section starts ============================= */}
                 <div className="pt-[80px] pb-[50px]">
                     <SectionTitle
