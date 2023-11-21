@@ -9,8 +9,6 @@
     left: 0;
     top: -8px;
     background: url('../../../assets/others/download.png');
-    /* background-size: cover;
-    background-repeat: no-repeat; */
     position: absolute;
     z-index: 99999;
 }
@@ -21,8 +19,6 @@
     left: 0;
     bottom: -6px;
     background: url('../../../assets/others/download.png');
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
     position: absolute;
     z-index: 99999;
 }

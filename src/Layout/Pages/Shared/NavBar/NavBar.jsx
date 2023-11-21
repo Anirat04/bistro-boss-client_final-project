@@ -8,6 +8,7 @@ const NavBar = () => {
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='dashboard'>Dashboard</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='our-menu'>Our Menu</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='our-shop/salad'>our shop</NavLink>
+        <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='login'>Login</NavLink>
     </>
 
     return (

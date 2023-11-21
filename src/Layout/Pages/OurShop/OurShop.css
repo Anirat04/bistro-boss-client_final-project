@@ -4,3 +4,24 @@
     text-decoration: underline 3px;
     text-underline-offset: 8px !important;
 }
+
+.card-sections_before::before{
+    content: '';
+    width: 100%;
+    height: 15px;
+    left: 0;
+    top: -138px;
+    background: url('../../../assets/others/download.png');
+    position: absolute;
+    z-index: 99999;
+}
+.card-sections_before::after{
+    content: '';
+    width: 100%;
+    height: 12px;
+    left: 0;
+    bottom: -136px;
+    background: url('../../../assets/others/download.png');
+    position: absolute;
+    z-index: 99999;
+}

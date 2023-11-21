@@ -1,0 +1,5 @@
+.login_bg, .login_Form_bg{
+    background: url('../../../assets/others/authentication.png');
+    /* background-size: cover; */
+    /* height: 100%; */
+}
