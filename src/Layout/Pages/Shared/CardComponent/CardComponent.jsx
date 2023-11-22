@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { ProviderContext } from "../../../../Provider/Provider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useCart from "../../../../hooks/useCart";
 
 const CardComponent = ({ CardDetails }) => {
     const { user } = useContext(ProviderContext)
     const navigate = useNavigate()
     const axiosSecure = useAxiosSecure()
+    const [cart, refetch] = useCart()
 
     const handleAddToCart = (CardDetails) => {
         const { category, image, name, price, recipe, _id } = CardDetails
@@ -35,6 +36,8 @@ const CardComponent = ({ CardDetails }) => {
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        // refetch data to update the cart length
+                        refetch()
                     }
                 })
         }

@@ -7,6 +7,7 @@ import 'react-tabs/style/react-tabs.css';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CardComponent from "../Shared/CardComponent/CardComponent";
+import useCart from "../../../hooks/useCart";
 
 const OurShop = () => {
     const catagories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
@@ -14,6 +15,7 @@ const OurShop = () => {
     const initialIndex = catagories.indexOf(category)
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [menuCardData, setMenuCardData] = useState([])
+    // const [cart, refetch] = useCart()
     console.log(category)
     console.log(initialIndex)
     useEffect(() => {
