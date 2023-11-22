@@ -1,9 +1,48 @@
 import './Login.css'
 import authentication_png from '../../../assets/others/authentication2.png'
 import { Link } from 'react-router-dom';
+// import react captcha
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { ProviderContext } from '../../../Provider/Provider';
 
 
 const Login = () => {
+    const {signIn} = useContext(ProviderContext)
+    const captchaRef = useRef(null)
+    const [disabled, setDesabled] = useState(true)
+
+    useEffect(() => {
+        loadCaptchaEnginge(6);
+    }, [])
+
+    const handleLogin = event => {
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+        console.log(email, password)
+        signIn(email, password)
+        .then(res => {
+            console.log('login successful')
+        })
+        .catch(err => {
+            console.log('login failed', err.message)
+        })
+    }
+
+    const handleCaptchaInput = () => {
+        const user_captcha_value = captchaRef.current.value
+
+        if (validateCaptcha(user_captcha_value, false) == true) {
+            console.log('captcha matched')
+            setDesabled(false)
+        }
+ 
+        console.log(user_captcha_value)
+    }
+
+
     return (
         <div className="login_bg min-h-screen justify-center flex flex-col">
             <div className='login_Form_bg max-w-[1320px] mx-auto flex items-center justify-between px-[100px] py-[50px]'
@@ -19,7 +58,7 @@ const Login = () => {
                 <div>
                     <div className="w-[536px] space-y-3 rounded-xl">
                         <h1 className="text-[40px] font-bold text-center">Login</h1>
-                        <form noValidate="" action="" className="space-y-6">
+                        <form onSubmit={handleLogin} className="space-y-6">
                             {/* email */}
                             <div className="space-y-1 text-sm">
                                 <label
@@ -49,30 +88,25 @@ const Login = () => {
                                     name="password"
                                     id="password"
                                     placeholder="Password"
-                                    className="w-full px-4 py-[20px] rounded-md dark:text-gray-100 border border-[#D0D0D0]" />
+                                    className="w-full px-4 py-[20px] rounded-md  border border-[#D0D0D0]" />
                                 <div data-lastpass-icon-root="true"></div>
                             </div>
                             {/* captcha */}
-                            <div className="space-y-1 text-sm">
-                                <input
-                                    type="text"
-                                    name="captcha"
-                                    className="w-full px-4 py-[20px] rounded-md dark:text-gray-100 border border-[#D0D0D0]" />
-                                <div className="flex justify-start text-[20px] text-[#5D5FEF] mt-[8px] font-semibold">
-                                    <a rel="noopener noreferrer" href="#">Reload captcha</a>
-                                </div>
-                                <div data-lastpass-icon-root="true"></div>
+                            <div className='bg-white relative h-[60px] flex items-center border border-[#D0D0D0] rounded-md'>
+                                < LoadCanvasTemplate />
                             </div>
                             {/* captcha input */}
-                            <div className="space-y-1 text-sm">
+                            <div className=" text-sm">
                                 <input
                                     type="text"
                                     name="captcha"
-                                    placeholder='Type here'
-                                    className="w-full px-4 py-[20px] rounded-md dark:text-gray-100 border border-[#D0D0D0]" />
-                                <div data-lastpass-icon-root="true"></div>
+                                    ref={captchaRef}
+                                    onChange={handleCaptchaInput}
+                                    placeholder='Type your captcha here'
+                                    className="w-full px-4 py-[20px] rounded-md border border-[#D0D0D0]  mt-[20px]"
+                                />
                             </div>
-                            <button className="block w-full p-3 text-center rounded-sm text-white bg-[rgba(209,160,84,0.70)]">Sign in</button>
+                            <button  disabled={disabled} className="btn block w-full p-3 text-center rounded-sm text-white bg-[rgba(209,160,84,0.70)]">Sign in</button>
                         </form>
 
                         <p className="text-[#D1A054] text-[20px] text-center">New here?

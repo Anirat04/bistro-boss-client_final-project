@@ -1,8 +1,29 @@
 import './Register.css'
 import authentication_png from '../../../assets/others/authentication2.png'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ProviderContext } from '../../../Provider/Provider';
 
 const Register = () => {
+    const {createUser} = useContext(ProviderContext)
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value
+        const email = form.email.value
+        const password = form.password.value
+        console.log('Register', name, email, password)
+        createUser(email, password)
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(err => {
+            console.log('error', err.message)
+        })
+    }
+
+
     return (
         <div className="register_bg min-h-screen justify-center flex flex-col">
             <div className='register_Form_bg max-w-[1320px] mx-auto flex flex-row-reverse items-center justify-between px-[100px] py-[50px]'
@@ -18,7 +39,7 @@ const Register = () => {
                 <div>
                     <div className="w-[536px] space-y-3 rounded-xl">
                         <h1 className="text-[40px] font-bold text-center">Sign Up</h1>
-                        <form noValidate="" action="" className="space-y-6">
+                        <form onSubmit={handleRegister} className="space-y-6">
                             {/* name */}
                             <div className="space-y-1 text-sm">
                                 <label

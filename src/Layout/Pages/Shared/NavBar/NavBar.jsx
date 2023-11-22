@@ -1,14 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
 import './NavBar.css'
+import { useContext } from "react";
+import { ProviderContext } from "../../../../Provider/Provider";
 
 const NavBar = () => {
+    const {user, logOut} = useContext(ProviderContext)
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {
+            console.log('user logged out successfully')
+        })
+        .catch(err => {
+            console.log('error logOut:', err.message)
+        })
+    }
+
     const navlinks = <>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='/'>Home</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='contact'>Contact Us</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='dashboard'>Dashboard</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='our-menu'>Our Menu</NavLink>
         <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='our-shop/salad'>our shop</NavLink>
-        <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='login'>Login</NavLink>
+        {
+            user? <button onClick={handleLogOut} className="btn">LogOut</button>
+            : <NavLink className='text-[20px] font-extrabold hover:text-[#EEFF25]' to='login'>Login</NavLink>
+        }
     </>
 
     return (

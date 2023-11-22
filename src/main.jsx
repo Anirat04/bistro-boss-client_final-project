@@ -12,6 +12,7 @@ import OurMenu from './Layout/Pages/OurMenu/OurMenu.jsx';
 import OurShop from './Layout/Pages/OurShop/OurShop.jsx';
 import Login from './Layout/Pages/Login/Login.jsx';
 import Register from './Layout/Pages/Register/Register.jsx';
+import Provider from './Provider/Provider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
